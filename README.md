@@ -88,7 +88,45 @@ camera:
     attributes:
       - calibration_points
 ```
+#### vacuum.ijai.v18
 
+```yaml
+logger:
+  default: info # or your preferred default level
+  logs:
+    custom_components.xiaomi_cloud_map_extractor: debug
+    
+camera:
+  - platform: xiaomi_cloud_map_extractor
+    host: !secret xiaomi_vacuum_host
+    token: !secret xiaomi_vacuum_token
+    username: !secret xiaomi_cloud_username
+    password: !secret xiaomi_cloud_password
+    force_api: ijai
+    country: 'cn'
+    store_map_raw: true
+    store_map_image: true
+    store_map_path: /config/vacuum
+    vacuum_entity_id: vacuum.ijai_v18_6277_robot_cleaner
+    draw:
+      - charger
+      - cleaned_area
+      - goto_path
+      - no_go_zones
+      - no_mopping_zones
+      - obstacles
+      - obstacles_with_photo
+      - path
+      - predicted_path
+      - vacuum_position
+      - virtual_walls
+      - zones
+    attributes:
+      - calibration_points
+      - rooms
+      - no_go_areas
+      - walls
+```
 
 #### Full
 
