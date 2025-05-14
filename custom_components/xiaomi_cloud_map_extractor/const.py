@@ -1,3 +1,5 @@
+"""Constants for Xiaomi Cloud Map Extractor."""
+
 DOMAIN = "xiaomi_cloud_map_extractor"
 PLATFORMS = ["camera"]
 
@@ -41,6 +43,7 @@ CONF_TOP = "top"
 CONF_TRIM = "trim"
 CONF_X = "x"
 CONF_Y = "y"
+CONF_VACUUM_ENTITY_ID = "vacuum_entity_id" # New constant
 
 CONF_AVAILABLE_APIS = [CONF_AVAILABLE_API_XIAOMI, CONF_AVAILABLE_API_VIOMI, CONF_AVAILABLE_API_ROIDMI,
                        CONF_AVAILABLE_API_DREAME, CONF_AVAILABLE_API_IJAI]
@@ -217,7 +220,8 @@ AVAILABLE_APIS = {
     CONF_AVAILABLE_API_DREAME: ["dreame.vacuum."],
     CONF_AVAILABLE_API_ROIDMI: ["roidmi.vacuum.", "zhimi.vacuum.", "chuangmi.vacuum."],
     CONF_AVAILABLE_API_VIOMI: ["viomi.vacuum."],
-    CONF_AVAILABLE_API_XIAOMI: ["roborock.vacuum", "rockrobo.vacuum"]
+    CONF_AVAILABLE_API_XIAOMI: ["roborock.vacuum", "rockrobo.vacuum"],
+    CONF_AVAILABLE_API_IJAI: ["ijai.vacuum."]
 }
 
 API_EXCEPTIONS = {
