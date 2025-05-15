@@ -1,12 +1,15 @@
 type: custom:xiaomi-vacuum-map-card
 map_source:
   camera: camera.xiaomi_cloud_map_extractor
+map_locked: true
 vacuum_platform: send_command
 calibration_source:
   camera: true
 entity: vacuum.ijai_v18_6277_robot_cleaner
 map_modes:
   - template: vacuum_clean_segment
+    repeats_type: EXTERNAL
+    max_repeats: 2
     service_call_schema:
       service: xiaomi_miot.call_action
       service_data:
