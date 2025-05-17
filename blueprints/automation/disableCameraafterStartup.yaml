@@ -1,0 +1,34 @@
+blueprint:
+  name: Disable Camera After Startup (Selectable)
+  description: Turns off a selected camera 5 minutes after Home Assistant starts.
+  domain: automation
+  input:
+    camera_entity:
+      name: Camera
+      description: The camera to turn off after startup.
+      selector:
+        entity:
+          domain: camera
+    delay_minutes:
+      name: Delay (Minutes)
+      description: How many minutes to wait after startup before turning off the camera.
+      default: 5
+      selector:
+        number:
+          min: 0
+          max: 120 # You can adjust the max delay if needed
+          unit_of_measurement: minutes
+          mode: slider # or 'box'
+
+trigger:
+  - platform: homeassistant
+    event: start
+
+action:
+  - delay:
+      minutes: !input delay_minutes
+  - service: camera.turn_off
+    target:
+      entity_id: !input camera_entity
+
+mode: single
